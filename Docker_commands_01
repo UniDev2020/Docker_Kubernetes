@@ -1,0 +1,34 @@
+#                                             Docker commands
+# /redis-image
+docker version
+docker run hello-world                                  # check locally, download, run
+docker run busybox ls                                   # runs additional commands with copy of fs
+docker run busybox ping google.com
+docker run -d busybox                                   # run container in background and show ID
+
+docker ps                                               # show all running containers on your computer
+docker ps --all                                         # show all containers we have ever created
+docker run <container id>                               # docker create + docker start
+
+docker system prune                                     # docker delete all stopped containers and build cache
+docker logs <container id>                              # inspect a containers and see what inside of it
+docker stop <container id>                              # stop container with 10s period with shutdown
+docker kill <container id>                              # stop container without 10s period
+
+#                                            Shell to container
+docker run redis
+docker exec -it <container id> <command>                # execute an additional command in our container
+docker exec -i -t <container id> <command>              # execute stdin of the command with right format text (terminal)
+docker exec -it <continer id> sh                        # full terminal access inside a container
+
+#                                             Create image
+sudo mkdir redis-image | cd redis-image                 # create and change directory
+code .                                                  # start code editor inside the folder(need installed docker IDE)
+#             Use PyCharm to create Docker file
+#                  Install Docker in Python Interpreter and restart PyCharm
+
+docker build -t yatsenkoev/redis:latest .               # build your own image with number of version and choose a folder
+docker run yatsenkoev/<container id>:latest             # run your own image
+
+docker commit -c <command> <container id>               # create a new image with changes
+

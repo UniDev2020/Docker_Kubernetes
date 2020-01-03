@@ -1,0 +1,14 @@
+# first you should work in the first directory
+cd client
+docker build -f Dockerfile.dev .
+docker run <image id>
+
+cd server
+docker build -f Dockerfile.dev .
+docker run <image id>
+
+cd worker
+docker build -f Dockerfile.dev .
+docker run <image id>
+
+# Then create a docker-compose.yml file

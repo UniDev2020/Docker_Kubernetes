@@ -1,0 +1,11 @@
+# Development,       Testing,          Deployment
+npm run start
+npm run test
+npm run build
+
+docker build -f Dockerfile.dev .                           # build file
+pwd                                                        # path working directory, command
+docker run -p 3000:3000 - v$(pwd):/app <image id>          # with docker volumes
+
+docker run -it <image id> npm run test                     # run interactive mode with specific tests
+docker run -it <image id> npm run test -- --coverage       # run interactive mode, show how many codes there, than exit

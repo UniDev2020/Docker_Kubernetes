@@ -1,0 +1,7 @@
+#                                       Create a container Node JS Web App
+# https://hub.docker.com/explore/                             Official Docker Repositories
+# prepair json and js, create dockerfile
+# /simpleweb Dockerfile, package.json, index.js
+
+docker build -t yatsenkoev/simpleweb .                        # build your own container
+docker run -p 8080:8080 yatsenkoev/simpleweb                  # run container with port mapping

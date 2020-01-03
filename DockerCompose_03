@@ -1,0 +1,22 @@
+#                                    Docker Compose with Multiple Local Containers
+# /visits
+docker build .
+docker build -t yatsenkoev/visits:latest .
+
+docker run redis
+# and in the second terminal
+# docker compose is a cli tool docker-compose
+docker build -t yatsenkoev/visits:latest
+docker run -p 8080:8080 yatsenkoev/visits
+# to docker-compose.yml
+# docker run <myimage> the same as docker-compose up
+
+# docker build .             all this commands are docker-compose up --build
+# docker run <myimage>
+
+docker-compose up -d                                                # start in background
+docker-compose down                                                 # opposite up
+docker-compose ps                                                   # show running containers, in docker-compose folder
+
+#                                       Automatic container restarts
+# Restart policies: "no", 'always', 'on-failure', if it has error code, 'unless stopped', restart unless forcibly stop

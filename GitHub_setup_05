@@ -1,0 +1,18 @@
+# go to the project directory
+
+git init                                                 # create a git repository
+git add .                                                # add all the work to git
+git commit -m "initial commit"                           # commit all the files
+git remote add origin <link to repository>
+git push origin master                                   # send to github
+
+# How to create your own ssh certificate  https://gist.github.com/adamjohnson/5682757
+cd ~/.ssh
+ssh-keygen -t rsa -C "your_email@example.com"
+# Now, go and open id_rsa.pub in your favorite text editor (you can do this via Windows Explorer or the OSX Finder
+if you like, typing open . will open the folder).
+# Copy the contents--exactly as it appears, with no extra spaces or lines--of id_rsa.pub and paste it into GitHub
+and/or BitBucket under the Account Settings > SSH Keys. NOTE: I like to give the SSH key a descriptive name, usually
+with the name of the workstation I'm on along with the date.
+
+git checkout -b feature                                  # create a new branch
