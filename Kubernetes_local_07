@@ -1,0 +1,3 @@
+minikube start                                            # start a local Kubernetes
+minikube status                                           # check status
+kubectl cluster-info                                      # check the information about Kubernetes
